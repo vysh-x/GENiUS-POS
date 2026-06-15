@@ -95,22 +95,11 @@ const Login = () => {
                 <ThemeToggle />
             </div>
 
-            {/* Back Button */}
-            <div className={elements.backButtonWrapper}>
-                <button
-                    onClick={handleBack}
-                    className={elements.iconButton}
-                    aria-label="Go back"
-                >
-                    <ArrowLeft size={24} />
-                </button>
-            </div>
-
             {/* Modal Container */}
             <AuthPanel className={`${elements.modalWrapper} p-8 flex flex-col justify-center`}>
                 {/* Welcome Header */}
                 <div className="text-center mb-6 pt-2">
-                    <h3 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Welcome to Store POS</h3>
+                    <h3 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Welcome to GENiUS POS</h3>
                     <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
                         {getStoreName() || 'Store Login'}
                     </p>

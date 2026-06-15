@@ -81,7 +81,7 @@ const LicenseVerify = () => {
             {/* Modal Container */}
             <AuthPanel>
                 <div className={elements.headerTitle}>
-                    <h3>Welcome to Store POS</h3>
+                    <h3>Welcome to GENiUS POS</h3>
                 </div>
 
                 <div className={elements.card}>

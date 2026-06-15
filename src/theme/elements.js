@@ -8,7 +8,7 @@ export const elements = {
     modalWrapper: "bg-white dark:bg-gray-800 rounded-2xl max-w-md w-full shadow-2xl overflow-hidden border border-gray-200 dark:border-gray-700",
     
     // Typography
-    headerTitle: "text-2xl font-medium text-gray-700 dark:text-gray-200 text-center mb-6",
+    headerTitle: "text-2xl font-medium text-gray-700 dark:text-gray-200 text-center mb-6 mt-4",
     headerSubtitle: "text-sm text-gray-500 dark:text-gray-400 mt-1",
     cardTitle: "text-xl font-semibold text-center text-gray-800 dark:text-white",
     
