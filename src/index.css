@@ -1,0 +1,207 @@
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --carture-bg: #F9F8F1;
+  --carture-surface: #FFFDF7;
+  --carture-surface-muted: #F1EFE5;
+  --carture-border: #E2DED0;
+  --carture-muted: #6D6978;
+  --carture-accent: #6A2C4C;
+  --carture-accent-hover: #7A3659;
+  --carture-accent-soft: rgb(106 44 76 / 0.08);
+}
+
+body {
+  @apply bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-white transition-colors duration-200;
+}
+
+html:not(.dark) body,
+html:not(.dark) .bg-gray-50,
+html:not(.dark) .bg-gray-100 {
+  background-color: var(--carture-bg);
+}
+
+html:not(.dark) .bg-white {
+  background-color: var(--carture-surface);
+}
+
+html:not(.dark) .bg-gray-200,
+html:not(.dark) .bg-gray-100\/50,
+html:not(.dark) .bg-gray-50\/50 {
+  background-color: var(--carture-surface-muted);
+}
+
+html:not(.dark) .text-gray-900,
+html:not(.dark) .text-gray-800,
+html:not(.dark) .text-gray-700 {
+  color: var(--carture-accent);
+}
+
+html:not(.dark) .text-gray-600,
+html:not(.dark) .text-gray-500,
+html:not(.dark) .text-gray-400 {
+  color: var(--carture-muted);
+}
+
+html:not(.dark) .border-gray-100,
+html:not(.dark) .border-gray-200,
+html:not(.dark) .border-gray-300 {
+  border-color: var(--carture-border);
+}
+
+html:not(.dark) .bg-blue-50,
+html:not(.dark) .bg-indigo-50 {
+  background-color: var(--carture-accent-soft);
+}
+
+html:not(.dark) .bg-blue-600,
+html:not(.dark) .bg-indigo-600,
+html:not(.dark) .from-blue-600,
+html:not(.dark) .from-indigo-600,
+html:not(.dark) .to-blue-700,
+html:not(.dark) .to-indigo-700 {
+  background-color: var(--carture-accent);
+  --tw-gradient-from: var(--carture-accent);
+  --tw-gradient-to: var(--carture-accent-hover);
+}
+
+html:not(.dark) .hover\:bg-blue-700:hover,
+html:not(.dark) .hover\:bg-indigo-700:hover {
+  background-color: var(--carture-accent-hover);
+}
+
+html:not(.dark) .text-blue-600,
+html:not(.dark) .text-indigo-600,
+html:not(.dark) .text-blue-400,
+html:not(.dark) .text-indigo-400 {
+  color: var(--carture-accent);
+}
+
+html:not(.dark) .border-blue-600,
+html:not(.dark) .border-indigo-600,
+html:not(.dark) .border-l-blue-600,
+html:not(.dark) .border-l-indigo-600 {
+  border-color: var(--carture-accent);
+}
+
+html:not(.dark) .focus\:ring-blue-500:focus,
+html:not(.dark) .focus\:ring-indigo-500:focus {
+  --tw-ring-color: var(--carture-accent);
+}
+
+/* Hide number input arrows */
+.no-spinner::-webkit-inner-spin-button,
+.no-spinner::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.no-spinner {
+  -moz-appearance: textfield;
+}
+
+/* Custom Scrollbar Styles */
+/* For Webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-thumb {
+  background: #475569;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+.dark * {
+  scrollbar-color: #475569 transparent;
+}
+
+@media print {
+
+  /* Hide everything by default */
+  body * {
+    visibility: hidden;
+  }
+
+  /* Show only the printable area and its children */
+  .printable-area,
+  .printable-area * {
+    visibility: visible;
+  }
+
+  /* Position printable area at the top-left */
+  .printable-area {
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    background: white !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Specifically hide elements meant to be hidden during print */
+  .no-print {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  /* Reset some styles for better printing */
+  @page {
+    margin: 1cm;
+    size: auto;
+  }
+
+  /* Ensure dark mode colors don't mess with printing */
+  .printable-area {
+    color: black !important;
+    background-color: white !important;
+  }
+
+  /* Ensure table fits page and has proper borders matching legacy */
+  .printable-area table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+  }
+
+  .printable-area thead th,
+  .printable-area tbody td,
+  .printable-area tfoot td {
+    border-bottom: 1px solid #000 !important;
+    padding: 8px 4px !important;
+    text-align: left;
+  }
+
+  .printable-area thead th {
+    background-color: #f3f4f6 !important;
+    font-weight: bold !important;
+    -webkit-print-color-adjust: exact;
+  }
+}
