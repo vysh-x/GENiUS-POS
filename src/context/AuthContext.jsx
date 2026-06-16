@@ -4,9 +4,27 @@ import { storage } from '../utils/storage';
 
 const AuthContext = createContext(null);
 
+const mockUser = {
+    userId: 'test-profile',
+    userName: 'Vaishali',
+    accesslevel: 'admin',
+    customerId: 'CUST-001',
+    store: {
+        customerid: 'CUST-001',
+        storename: 'Mock Store'
+    }
+};
+
+const mockLicense = {
+    isValid: true,
+    stores: [
+        { customerid: 'CUST-001', storename: 'Mock Store' }
+    ]
+};
+
 export const AuthProvider = ({ children }) => {
-    const [user, setUser] = useState(() => storage.getUser());
-    const [license, setLicense] = useState(() => storage.getLicense());
+    const [user, setUser] = useState(() => storage.getUser() || mockUser);
+    const [license, setLicense] = useState(() => storage.getLicense() || mockLicense);
     const loading = false;
 
     const [rolePermissions, setRolePermissions] = useState({
